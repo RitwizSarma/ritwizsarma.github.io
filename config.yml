@@ -53,6 +53,10 @@ params:
           imageUrl: "bio-pic.png"
           imageWidth: 160
           imageHeight: 160
+          latestUpdate:
+            label: Latest Update
+            date: May 2024
+            summary: "Sharing CAFRAL’s new toolkit for green infrastructure financing with policy teams across India."
           buttons:
             - name: CV
               url: cv.html
