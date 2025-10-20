@@ -25,7 +25,7 @@ menu:
 params:
     description: "This is Ritwiz Sarma's website."
     author: Ritwiz Sarma
-    # googleAnalyticsID: "G-XXXXX"
+    googleAnalyticsID: "G-7J9422H7D9"
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
