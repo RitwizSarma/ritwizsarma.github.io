@@ -1,5 +1,5 @@
-baseURL: "https://pascalmichaillat.org/hugo-website/" 
-title: Moritz-Maria von Igelfeld
+baseURL: "www.example.org/" 
+title: Ritwiz Sarma
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -12,30 +12,24 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
+        - name: Research
           url: papers/
           weight: 2
-        - name: Courses
-          url: courses/
-          weight: 3
-        - name: Data
+        - name: DataSci
           url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+          weight: 3 
+        - name: CV
+          url: cv.html
+          weight: 1
 
 params:
-    description: "This website hosts Moritz-Maria von Igelfeld's research papers, books, course materials, data, curriculum vitae, and contact information."
-    author: Moritz-Maria von Igelfeld
+    description: "This is Ritwiz Sarma's website."
+    author: Ritwiz Sarma
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
-    disableThemeToggle: true
+    disableThemeToggle: false
     ShowShareButtons: false
     ShowReadingTime: false
     disableSpecial1stPost: true
@@ -54,50 +48,52 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
-          imageUrl: "picture.jpeg"
+          title: Ritwiz Sarma
+          subtitle: "Namaste! I’m a Research Associate at [**CAFRAL**](https://cafral.org.in/), a thinktank at the Reserve Bank of India. My interests span **Infrastructure**, **Climate Change**, **Development**, and **Cultural Change**. My work involves methods like remote sensing, NLP, and causal machine learning, powered by Python, R, QGIS, and STATA. I’ve previously built deep learning pipelines for legal text at XKDR Forum with Ajay Shah, and contributed to climate change research at the Energy Policy Institute at Chicago - India."
+          imageUrl: "bio-pic.png"
           imageWidth: 160
           imageHeight: 160
           buttons:
-            - name: Papers
+            - name: CV
+              url: cv.html
+            - name: Research
               url: papers/
-            - name: Data
+            - name: DataSci
               url: data/
-            - name: Books
-              url: books/
-            - name: Courses
-              url: courses/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+            # - name: Books
+            #   url: books/
+            # - name: Courses
+            #   url: courses/
+            # - name: Tags
+            #   url: tags/
+            # - name: Archive
+            #   url: archive/
+            # - name: Blog
+            #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
         - name: CV
           url: cv.pdf
         - name: Email
-          url: mailto:igelfeld@regensburg.edu
-        - name: Zoom
-          url: https://www.zoom.us/my/igelfeld
-        - name: Location
-          url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
+          url: mailto:ritwiz.sarma@cafral.org.in
+        # - name: Zoom
+        #   url: https://www.zoom.us/my/igelfeld
+        # - name: Location
+        #   url: location/
+        # - name: Office Hours
+        #   url: officehours/
+        # - name: Google Scholar
+        #   url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
         - name: GitHub
-          url: https://github.com/pmichaillat
-        - name: Substack
-          url: https://pmichaillat.substack.com
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
-        - name: Twitter
-          url: https://x.com/pmichaillat
-        - name: Bluesky
-          url: https://bsky.app/profile/pmichaillat.bsky.social
+          url: https://github.com/RitwizSarma/
+        - name: Linkedin
+          url: https://www.linkedin.com/in/rsarma-datasci/
+        - name: ORCID
+          url: https://orcid.org/0009-0002-6973-3213
+        # - name: Twitter
+        #   url: https://x.com/pmichaillat
+        # - name: Bluesky
+        #   url: https://bsky.app/profile/pmichaillat.bsky.social
 
     assets:
         disableScrollBarStyle: true
@@ -105,7 +101,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Ritwiz Sarma"
       icon: favicon.ico
       iconHeight: 18
 

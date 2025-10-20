@@ -2,3 +2,6 @@
 public/
 resources/
 .hugo_build.lock
+
+# Ubuntu working files
+*:Zone.Identifier

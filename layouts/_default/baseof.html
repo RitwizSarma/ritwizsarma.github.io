@@ -24,5 +24,7 @@
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ $cvRedirect := resources.Get "js/mobile-cv-redirect.js" | minify | fingerprint }}
+    <script src="{{ $cvRedirect.RelPermalink }}" integrity="{{ $cvRedirect.Data.Integrity }}" defer></script>
 </body>
 </html>
