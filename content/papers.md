@@ -16,11 +16,11 @@ description: "Papers by Ritwiz Sarma."
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Who Lends When it Floods? Evidence from India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. Last presented: ESCB RCCC Workshop, Banco de Espana, 2025, Madrid ES. </small>
+      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. Last presented: ESCB RCCC Workshop, Banco de Espana, 2025, Madrid ES. 
     </span>
     <span class="dropdown-caret"></span>
   </summary>
-<small> </small>
+<small> </small></small>
 </details><br>
 
 <details class="details-reset border rounded-2">
@@ -90,11 +90,11 @@ description: "Papers by Ritwiz Sarma."
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Language Endangerment and Culture Loss - A Case Study <br><small> Social Policy Research Foundation, 2022. [<a href="https://sprf.in/language-endangerment-and-culture-loss-tai-khamti/">Stub at SPRF website.</a>] [<a href="https://sprf.in/wp-content/uploads/2022/10/Case-Study-of-Tai-Khamti-2.pdf">PDF.</a>] [<a href="../talks/Presentation_Kautilya.pdf">Slides.</a>] [<a href="/refs/SPRF_paper.bib">Bib.</a>] </small>
+      Language Endangerment and Culture Loss - A Case Study <br><small> Social Policy Research Foundation, 2022. [<a href="https://sprf.in/language-endangerment-and-culture-loss-tai-khamti/">Stub at SPRF website.</a>] [<a href="https://sprf.in/wp-content/uploads/2022/10/Case-Study-of-Tai-Khamti-2.pdf">PDF.</a>] [<a href="../talks/Presentation_Kautilya.pdf">Slides.</a>] [<a href="/refs/SPRF_paper.bib">Bib.</a>] 
     </span>
     <span class="dropdown-caret"></span>
   </summary>
-<small> <i> This study attempts to analyse the cultural impact of language loss in Tai Khamti speakers, an endangered language community native to North-Eastern India. Primary data is collected to assess cultural markers relating to linguistic maintenance, indigenous knowledge and documentation, linguistic cultural markers, and narrative forms. The analysis of this data provides insight into culture loss through linguistic endangerment in North-Eastern India and the broader intersection of language and culture. </i> </small>
+<small> This study attempts to analyse the cultural impact of language loss in Tai Khamti speakers, an endangered language community native to North-Eastern India. Primary data is collected to assess cultural markers relating to linguistic maintenance, indigenous knowledge and documentation, linguistic cultural markers, and narrative forms. The analysis of this data provides insight into culture loss through linguistic endangerment in North-Eastern India and the broader intersection of language and culture. </small> </small>
 </details>
 
 ---

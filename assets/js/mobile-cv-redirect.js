@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isMobile) {
-    cvButton.setAttribute("href", "cv-no-outline.html");
+    cvButton.setAttribute("href", "/cv-no-outline.html");
   }
 });

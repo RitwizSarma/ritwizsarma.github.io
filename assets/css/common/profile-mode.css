@@ -25,7 +25,7 @@
     border-radius: calc(var(--radius) * 1.5);
     padding: 12px 16px;
     margin-top: 8px;
-    max-width: 34rem;
+    max-width: 42rem;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 

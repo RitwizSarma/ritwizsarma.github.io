@@ -49,13 +49,13 @@ params:
     profileMode:
           enabled: true
           title: Ritwiz Sarma
-          subtitle: "Namaste! I’m a Research Associate at [**CAFRAL**](https://cafral.org.in/), a thinktank at the Reserve Bank of India. My interests span **Infrastructure**, **Climate Change**, **Development**, and **Cultural Change**. My work involves methods like remote sensing, NLP, and causal machine learning, powered by Python, R, QGIS, and STATA. I’ve previously built deep learning pipelines for legal text at XKDR Forum with Ajay Shah, and contributed to climate change research at the Energy Policy Institute at Chicago - India."
+          subtitle: "Namaste! I'm a Research Associate at [**CAFRAL**](https://cafral.org.in/), a thinktank at the Reserve Bank of India. My interests span **Infrastructure**, **Climate Change**, **Development**, and **Cultural Change**. My work involves methods like remote sensing, NLP, and causal machine learning, powered by Python, R, QGIS, and STATA. I’ve previously built deep learning pipelines for legal text at XKDR Forum with Ajay Shah, and contributed to climate change research at the Energy Policy Institute at Chicago - India."
           imageUrl: "bio-pic.png"
           imageWidth: 160
           imageHeight: 160
           buttons:
             - name: CV
-              url: cv.html
+              url: cv-no-outline.html
             - name: Research
               url: papers/
             - name: DataSci
