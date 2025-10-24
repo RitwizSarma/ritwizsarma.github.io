@@ -10,11 +10,16 @@ I use data science to make sense of how policies, firms, and the environment int
 
 #### Public Goods
 
-- **CAG website scraper** 
++ **CAG Audits** 
 
 A Python scraper to download audit reports from the Comptroller and Auditor General of India (CAG) website, supporting sector-wise and archived reports with multithreaded downloads and robust error handling. <small>[[GitHub](https://github.com/RitwizSarma/cag-scraper/)]</small>
 
-- **LaTeX templates for Masters' theses at MSE** <small> [[GitHub](https://github.com/RitwizSarma/mse-thesis-templates/)] [[Overleaf official template page](https://www.overleaf.com/latex/templates/madras-school-of-economics-official-thesis-templates/rbxdzxfjnmcr)] </small>
++ **IGROdisha Land Values** 
+
+I built a large high-resolution geocoded dataset (over _64,000,000 plots_) of land market values for several states. Here's the open-sourced code for Odisha. <small>[[GitHub](https://github.com/RitwizSarma/igrodisha-scraper/)]</small>
+
++ **LaTeX templates for Masters' theses at MSE** <small> [[GitHub](https://github.com/RitwizSarma/mse-thesis-templates/)] [[Overleaf official template page](https://www.overleaf.com/latex/templates/madras-school-of-economics-official-thesis-templates/rbxdzxfjnmcr)] </small>
+
 
 ---
 
@@ -24,10 +29,10 @@ A Python scraper to download audit reports from the Comptroller and Auditor Gene
 
 I built deep learning and pre-processing pipelines for a unique judicial text classification problem at [XKDR Forum](https://www.xkdr.org/). My work involved figuring out how this would scale and completing a cost comparison to using LLMs for this usecase.
 
-- <b>Building High-Resolution Datasets: Land Values in Odisha </b>
+<!-- - <b>Building High-Resolution Datasets: Land Values in Odisha </b>
 
 I built a large high-resolution geocoded dataset (over _64,000,000 plots_) of land market values for Odisha, Telangana, Gujarat, Andhra Pradesh and Jharkhand. Land market values are important for studying state land acquisition and are an excellent proxy of regional economic performance. 
-<!-- [Take a look](/portfolio/portfolio-1).  -->
+[Take a look](/portfolio/portfolio-1).  -->
 
 - <b>No Bridge Too Far: Unique Geospatial Bridges Database</b>
 

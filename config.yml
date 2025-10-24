@@ -55,7 +55,7 @@ params:
           imageHeight: 160
           buttons:
             - name: CV
-              url: cv-no-outline.html
+              url: cv.html
             - name: Research
               url: papers/
             - name: DataSci
