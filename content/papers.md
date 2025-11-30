@@ -20,7 +20,7 @@ description: "Papers by Ritwiz Sarma."
     </span>
     <span class="dropdown-caret"></span>
   </summary>
-<small> </small></small>
+<small> We examine whether non-banks fill credit gaps following climate shocks. Using the August 2017 floods in two Indian states, Uttar Pradesh and Bihar, as a plausibly exogenous shock, we combine georeferenced flood-extent data with a novel, near-universe panel of Indian retail credit data. A difference-in-differences design, comparing non-banks and banks across flooded and unaffected pincodes, reveals that non-banks expand lending by 5.75% in affected areas relative to banks, alongside broader borrower outreach. </small></small>
 </details><br>
 
 <details class="details-reset border rounded-2">
