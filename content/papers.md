@@ -16,7 +16,7 @@ description: "Papers by Ritwiz Sarma."
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. Last presented: ESCB RCCC Workshop, Banco de Espana, 2025, Madrid ES. 
+      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. Last presented: ESCB RCCC Workshop, Banco de Espana, 2025, Madrid ES. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
     </span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -29,7 +29,21 @@ description: "Papers by Ritwiz Sarma."
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      The Himalayan Tightrope: A High-resolution Study of Economy-Environmental Tradeoff of Infrastructure Development <br><small> With <a href="https://www.linkedin.com/in/riju-garg/" target="_blank">Riju Garg</a>. Last presented: Kautilya Colloquy, 2024, Hyderabad IN. [<a href="/papers/Tradeoff_TIES25.pdf">PDF.</a>] [<a href="../files/Presentation_Kautilya.pdf">Slides.</a>] [<a href="/refs/Tradeoff_Kautilya24.bib">Bib.</a>]</small>
+      Does One District One Product Deliver? Evidence from a Subnational Industrial Policy <br><small> With <a href="https://mse.ac.in/faculty/gopal-krishna-roy/" target="_blank">Gopal Krishna Roy</a>. R&R at the BE Journal of Economic Analysis and Policy.</small>
+    </span>
+    <span class="dropdown-caret"></span>
+  </summary>
+<small> <small> This paper studies the economic eﬀects of the One District One Product (ODOP) programme, a subnational industrial policy implemented in Uttar Pradesh, India. Using repeated cross-sections of establishment-level data from government surveys of unincorporated enterprises, we construct a novel district–industry panel and implement a difference-in-differences design to estimate the programme’s impact on gross value added, employment, capital, and firm counts. We find little evidence of robust positive effects on these outcomes in the short run. </small> </small>
+</details><br>
+
+
+<details class="details-reset border rounded-2">
+  <summary class="px-3 py-2 border-bottom">
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
+    <path fill-rule="evenodd" d="..."></path>
+</svg>
+    <span aria-label="Summary" class="m-1">
+      The Himalayan Tightrope: A High-resolution Study of Economy-Environmental Tradeoff of Infrastructure Development <br><small> With <a href="https://www.linkedin.com/in/riju-garg/" target="_blank">Riju Garg</a>. Last presented: Kautilya Colloquy, 2024, Hyderabad IN.</small>
     </span>
     <span class="dropdown-caret"></span>
   </summary>
