@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>feb27_spatmethods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Feb27_SpatMethods_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Feb27_SpatMethods_files/libs/quarto-html/quarto.js"></script>
+<script src="Feb27_SpatMethods_files/libs/quarto-html/popper.min.js"></script>
+<script src="Feb27_SpatMethods_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Feb27_SpatMethods_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Feb27_SpatMethods_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Feb27_SpatMethods_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Feb27_SpatMethods_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Feb27_SpatMethods_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Feb27_SpatMethods_files/libs/bootstrap/bootstrap-96dee5e8d7ac07385e673effd7c4d133.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Feb27_SpatMethods_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="Feb27_SpatMethods_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="Feb27_SpatMethods_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="geospatial-data-in-r" class="level1">
+<h1>Geospatial Data in R</h1>
+<section id="satellite-data-in-economics" class="level2">
+<h2 class="anchored" data-anchor-id="satellite-data-in-economics">1. Satellite data in economics</h2>
+<section id="a-simple-economic-question" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-economic-question">1.1 A simple economic question</h3>
+<p>Suppose we want to answer the following question:</p>
+<blockquote class="blockquote">
+<p>Do heat shocks reduce economic productivity?</p>
+</blockquote>
+<p>Suppose we have firm-level data on output, capital expenditure, wages, and other economic outcomes. Is it feasible to measure temperature?</p>
+<p>Not without significant costs. Why?</p>
+<p>This requires linking a <strong>physical surface</strong> (temperature measured in geographic space) to <strong>economic units</strong> (districts, firms, households).</p>
+<p>Economic data are organized by economic/administrative units.<br>
+Climate and environmental data are organized by geography.</p>
+<p>Spatial data provides the bridge between the two. We can answer this question with two sets of data: firm/plant locations and <em>spatial temperature data</em>.</p>
+</section>
+<section id="why-spatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="why-spatial-data">1.2 Why spatial data?</h3>
+<p>I’ve motivated one example of why spatial data can be useful to economists. Here are two more.</p>
+<section id="deforestation-and-political-economy" class="level4">
+<h4 class="anchored" data-anchor-id="deforestation-and-political-economy">Deforestation and political economy</h4>
+<p>Burgess et al.&nbsp;(2012) ask:</p>
+<blockquote class="blockquote">
+<p>How does administrative delimitation affect deforestation in Indonesia?</p>
+</blockquote>
+<p>Forestry in Indonesia is heavily regulated. However, local officials may be bribed to overlook illegal logging. This creates a serious measurement problem: administrative forestry statistics, often produced in collaboration with local officials, may be systematically misreported.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Burgess et al.&nbsp;(2012) overcome this problem using satellite imagery to measure deforestation. They combine:</p>
+<ul>
+<li>Spatial data on forest cover to track actual loss over time</li>
+<li>Indonesian subnational administrative boundaries</li>
+</ul>
+<p>They find:</p>
+<ul>
+<li><p>Each additional district created within a province increases the province’s deforestation rate by 8.2 percent - local prices fall in the province by 3.3 percent.</p></li>
+<li><p>Essentially, districts engage in Cournot-style competition in determining how much wood to extract from their forests.</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><a href="burgess2012_img1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Forest cover change, Burgess et al.&nbsp;(2012)."><img src="burgess2012_img1.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="300" alt="Forest cover change, Burgess et al.&nbsp;(2012)."></a></p>
+</figure>
+</div>
+<figcaption>Forest cover change, <em>Burgess et al.&nbsp;(2012).</em></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Without satellite-based spatial data, the study would have been constrained to potentially biased administrative statistics.</p>
+</section>
+<section id="floods-and-economic-outcomes" class="level4">
+<h4 class="anchored" data-anchor-id="floods-and-economic-outcomes">Floods and economic outcomes</h4>
+<p>Patel (2025) asks:</p>
+<blockquote class="blockquote">
+<p>What are the economic consequences of floods?</p>
+</blockquote>
+<p>Flooding in Bangladesh is frequent, highly localized, and often poorly measured. Existing flood databases—such as those based on news reports or government records—systematically miss smaller or short-term floods, especially in poorer or more remote areas.</p>
+<p>This creates a fundamental measurement problem: if floods are undercounted or mismeasured, we cannot credibly estimate their economic impact.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Patel combines:</p>
+<ul>
+<li><p>Radar-based satellite measurements of surface water, which allow daily detection of inundation</p></li>
+<li><p>Administrative boundary data for Bangladesh’s 5,158 unions (small local government units) to assign flood exposure precisely in space</p></li>
+<li><p>Satellite-based nighttime lights as a proxy for economic output</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><a href="patel2025_img1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="patel2025_img1.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="280"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>He finds:</p>
+<ul>
+<li><p>Floods cause large, negative, and persistent (up to 7 years) declines in economic activity.</p></li>
+<li><p>Significant heterogeneity based on previous flooding history - past inundation exposure mitigates damages</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="patel2025_img2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="patel2025_img2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></a></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="what-we-will-do-today" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-will-do-today">1.3 What we will do today</h3>
+<p>Returning to the original question:</p>
+<blockquote class="blockquote">
+<p>Does heat reduce economic productivity?</p>
+</blockquote>
+<p>We will work through one step of answering this question by creating and plotting a <em>spatial dataset</em> of temperature at the <em>district</em> level.</p>
+<p>This is what it will look like.</p>
+<p><a href="final_output.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="final_output.png" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="the-basics">2. The basics</h2>
+<section id="a-quick-intro-to-r" class="level3">
+<h3 class="anchored" data-anchor-id="a-quick-intro-to-r">2.1 A quick intro to R</h3>
+<p>R is a free and open-source programming language used mainly for stats and complex data visualization. Think of R as a <em>fancy calculator with lots of memory</em>: that is all we need it for.</p>
+<p>Try this out:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>R is <em>vectorised</em> - it thinks of everything in terms of <strong>vectors</strong>. Let’s create one:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">34</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, I can use the <code>temp</code> variable to perform statistical operations on the vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31</code></pre>
+</div>
+</div>
+<p>Binding several vectors together, we can create a <strong>dataframe</strong>. This is R’s approximation of a table.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">lon =</span> <span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">78</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat =</span> <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">27</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">temp =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">312</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  lon lat temp
+1  77  28  300
+2  78  27  312</code></pre>
+</div>
+</div>
+<p>Here’s where R being <em>vectorised</em> is helpful - we can run operations on entire columns at once. We use the <code>$</code> operator to pinpoint a column from a dataframe.</p>
+<p>Consider the following - right now, <code>temp</code> is in Kelvin. Let’s convert it to degrees Celsius.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>tempC <span class="ot">&lt;-</span> df<span class="sc">$</span>temp <span class="sc">-</span> <span class="fl">273.15</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  lon lat temp tempC
+1  77  28  300 26.85
+2  78  27  312 38.85</code></pre>
+</div>
+</div>
+<p>90% of data work is just creating new columns.</p>
+</section>
+<section id="spatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data">2.2 Spatial data</h3>
+<p>We will use the library <code>terra</code> for spatial data manipulation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Up until Section 2.1, <code>df</code> is just a regular dataframe.</p>
+<p>It has longitude and latitude columns, but R does not yet “know” that these numbers represent geographic coordinates.</p>
+<p>To turn this into spatial data, we must tell R:</p>
+<ul>
+<li>Which columns represent coordinates</li>
+<li>What coordinate reference system (CRS) they use</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="What's a Coordinate Reference System (CRS)?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s a Coordinate Reference System (CRS)?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Earth is a three-dimensional globe, but our maps are flat.<br>
+To display locations on a screen, we must mathematically project the curved surface of the Earth onto a two-dimensional plane.</p>
+<p>Whenever we work with spatial data, we are making a mathematical choice about how to represent the curved surface of the Earth on a flat plane. That choice is called a <em>projection</em>, and the full set of rules that define how coordinates map to the Earth is called a <em>Coordinate Reference System (CRS)</em>.</p>
+<p><em>Important!</em> Different spatial layers must share the same CRS in order to align correctly.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_vect <span class="ot">&lt;-</span> <span class="fu">vect</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  df,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs =</span> <span class="st">"EPSG:4326"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>df_vect</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> class       : SpatVector 
+ geometry    : points 
+ dimensions  : 2, 2  (geometries, attributes)
+ extent      : 77, 78, 27, 28  (xmin, xmax, ymin, ymax)
+ coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+ names       :  temp tempC
+ type        : &lt;num&gt; &lt;num&gt;
+ values      :   300 26.85
+                 312 38.85</code></pre>
+</div>
+</div>
+<p>This is no longer a dataframe — it is a <strong>SpatVector</strong>. Spatial data = geometry + attributes.</p>
+<p>Let’s plot these points.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_vect)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>At this point, we have created spatial data manually.</p>
+<p>Consider however: the core dataframe has not changed. The difference is that <code>terra</code> now knows these rows live somewhere in space.</p>
+<p>Later, when we overlay ERA5 grids with district boundaries, this geometric awareness will allow us to compute zonal statistics.</p>
+</section>
+</section>
+<section id="the-task-at-hand-plotting-era5-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-task-at-hand-plotting-era5-data">3. The task at hand: plotting ERA5 data</h2>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">3.1 Overview</h3>
+<p>Before we touch ERA5, we need to understand two fundamental types of spatial data.</p>
+<section id="vector-data" class="level4">
+<h4 class="anchored" data-anchor-id="vector-data">Vector data</h4>
+<p>Vector data represents <em>discrete objects</em>: lines (roads, rivers) or polygons (districts, states, countries)</p>
+<p>Each feature has: a) A geometry (its shape) b) Attributes (data attached to it)</p>
+<p>The vector data we will work are district boundaries (polygons) of India.</p>
+</section>
+<section id="raster-data" class="level4">
+<h4 class="anchored" data-anchor-id="raster-data">Raster data</h4>
+<p>Raster data represents <em>nearly-continuous surfaces</em>: temperature, precipitation, pollution concentration. Photographs are one kind of raster data.</p>
+<p>A raster is <em>a grid of equally sized pixels with each pixel having some value</em>.</p>
+<p>ERA5 temperature is raster data.</p>
+</section>
+<section id="our-process" class="level4">
+<h4 class="anchored" data-anchor-id="our-process">Our process</h4>
+<p>Consider a scenario: you want to find the effect of temperature on some economic outcome (prices, output, delinquency rates).</p>
+<p>To compute district-level climate data:</p>
+<ul>
+<li>Satellite-derived temperature data is <strong>by grid cell</strong></li>
+<li>But our econometric data is at the <strong>district level</strong></li>
+<li>We must aggregate raster values inside district polygons</li>
+</ul>
+<p>This process is called <strong>zonal statistics</strong>.</p>
+</section>
+</section>
+<section id="temperature-data" class="level3">
+<h3 class="anchored" data-anchor-id="temperature-data">3.2 Temperature data</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where can we get temperature data?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Temperature data is available from several sources. In India, the <strong>India Meteorological Department (IMD)</strong> provides station-based observations. Internationally, agencies like <strong>NASA</strong>, <strong>NOAA</strong>, and the <strong>European Centre for Medium-Range Weather Forecasts (ECMWF)</strong> provide gridded climate datasets.</p>
+<p>In this workshop, we use <strong>ERA5</strong>, produced by ECMWF under the Copernicus Climate Change Service. ERA5 is a global reanalysis dataset that combines weather models with billions of historical observations to produce consistent, high-resolution gridded data over time. It is widely used in economics because it offers: (i) global coverage, (ii) long time series, (iii) daily or hourly frequency, and (iv) internally consistent measurement across space and time — making it ideal for panel and spatial analysis.</p>
+</div>
+</div>
+<p>For temperature data, we will use the file emailed to you earlier.</p>
+<p>Be sure to set the path in the below code to where you saved the file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"era5_20250101_0000.nc"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 125, 125, 1  (nrow, ncol, nlyr)
+resolution  : 0.25, 0.25  (x, y)
+extent      : 66.875, 98.125, 6.875, 38.125  (xmin, xmax, ymin, ymax)
+coord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) 
+source      : era5_20250101_0000.nc 
+varname     : Band1 (GDAL Band Number 1) 
+name        : Band1 
+unit        :     K </code></pre>
+</div>
+</div>
+<p>Notice what R tells us:</p>
+<ul>
+<li><p>Number of rows and columns → grid dimensions</p></li>
+<li><p>Extent → geographic coverage</p></li>
+<li><p>Resolution → size of each grid cell</p></li>
+<li><p>CRS → coordinate reference system</p></li>
+</ul>
+<p>Let’s look at the raw raster data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>ERA5 provides temperature in K. Therefore, similar to our exercise in Section 2.1, we convert K to degrees Celsius.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> r <span class="sc">-</span> <span class="fl">273.15</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This is called <strong>raster algebra</strong>. The subtraction is applied to every grid cell.</p>
+</section>
+<section id="boundary-data" class="level3">
+<h3 class="anchored" data-anchor-id="boundary-data">3.3 Boundary data</h3>
+<p>Now we load India district boundaries. This is vector data: polygons (the district shapes) with attributes (district names, state they belong to, any other data you wish to append).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">vect</span>(<span class="st">"India-Districts-2011Census.shp"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Reminder</em>: when working with two spatial datasets, they must share the <strong>same CRS</strong> to align correctly.</p>
+<p>Which one should we transform?</p>
+<p>In general:</p>
+<ul>
+<li><p><strong>Vector data can be reprojected losslessly</strong></p></li>
+<li><p><strong>Raster data should not be repeatedly reprojected</strong>, because reprojection requires interpolation and can alter pixel values</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(ind, <span class="fu">crs</span>(r))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s overlay them.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(r)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ind, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We now have:</p>
+<ul>
+<li>A temperature raster</li>
+<li>Administrative boundaries</li>
+</ul>
+<p>These are in the same coordinate system, so they align.</p>
+</section>
+<section id="zonal-stats" class="level3">
+<h3 class="anchored" data-anchor-id="zonal-stats">3.4 Zonal stats</h3>
+<p>Quick refresher of our goal:</p>
+<p>For each district polygon, compute the mean temperature of all grid cells inside it. This operation is called <strong>zonal statistics</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>district_means <span class="ot">&lt;-</span> <span class="fu">extract</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  r,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  ind,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">fun =</span> mean,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(district_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID     Band1
+1  1 20.321637
+2  2 10.193099
+3  3 14.605534
+4  4 18.412855
+5  5 10.906966
+6  6  8.665885</code></pre>
+</div>
+</div>
+<p>What happened here?</p>
+<ul>
+<li><code>extract()</code> identifies all raster cells within each polygon</li>
+<li><code>fun = mean</code> computes the average</li>
+<li>The output is a table of district-level averages</li>
+</ul>
+<p>Now we attach this back to the district polygons.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ind<span class="sc">$</span>mean_temp <span class="ot">&lt;-</span> district_means[,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plotting" class="level3">
+<h3 class="anchored" data-anchor-id="plotting">3.5 Plotting</h3>
+<p>To plot spatial data, we use the following libraries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyterra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let us now plot the aggregated result.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_spatvector</span>(<span class="at">data =</span> ind, <span class="fu">aes</span>(<span class="at">fill =</span> mean_temp)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"blue"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mid =</span> <span class="st">"white"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"red"</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Temperature"</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Feb27_SpatMethods_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>At this stage, we can already begin asking substantive questions:</p>
+<ul>
+<li>Which districts are the hottest?</li>
+<li>Are hotter districts concentrated in particular states?</li>
+<li>Is there a north–south gradient?</li>
+<li>Is coastal India cooler than inland regions?</li>
+</ul>
+</section>
+</section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">4. What Comes Next?</h2>
+<p>Today we used a single ERA5 file — one hour of temperature, one country.</p>
+<p>But ERA5 is much richer than that:</p>
+<ul>
+<li>Hourly data</li>
+<li>Global coverage</li>
+<li>Many climate variables (rainfall, wind, soil moisture, radiation)</li>
+</ul>
+<p>In real research, we rarely use raw hourly data. Instead, we typically:</p>
+<ol type="1">
+<li><strong>Time-average</strong>
+<ul>
+<li>Daily means<br>
+</li>
+<li>Monthly means<br>
+</li>
+<li>Seasonal averages<br>
+</li>
+<li>Growing season averages</li>
+</ul></li>
+<li><strong>Construct derived variables</strong>
+<ul>
+<li>Heatwave days (temperature &gt; threshold)<br>
+</li>
+<li>Degree days<br>
+</li>
+<li>Rainfall shocks<br>
+</li>
+<li>Drought indices</li>
+</ul></li>
+<li><strong>Build panel datasets</strong>
+<ul>
+<li>District × month panels<br>
+</li>
+<li>District × year panels<br>
+</li>
+<li>Merge with census or NSSO data</li>
+</ul></li>
+<li><strong>Use population-weighted aggregation</strong>
+<ul>
+<li>Weight grid cells by population instead of simple averages</li>
+</ul></li>
+</ol>
+<p>The core logic, however, remains the same.</p>
+<p>The important takeaway is that we now understand how to convert gridded climate data into administrative units that can be used in economic analysis.</p>
+<p>Once you understand this transformation, you can work with almost any geospatial climate dataset.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

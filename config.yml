@@ -18,6 +18,9 @@ menu:
         - name: DataSci
           url: data/
           weight: 3 
+        - name: Teaching
+          url: teaching/
+          weight: 4 
         - name: CV
           url: cv.html
           weight: 1
@@ -60,6 +63,8 @@ params:
               url: papers/
             - name: DataSci
               url: data/
+            - name: Teaching
+              url: teaching/
             # - name: Books
             #   url: books/
             # - name: Courses
