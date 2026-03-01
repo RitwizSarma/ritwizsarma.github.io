@@ -18,9 +18,9 @@ menu:
         - name: DataSci
           url: data/
           weight: 3 
-        - name: Teaching
-          url: teaching/
-          weight: 4 
+        # - name: Teaching
+        #   url: teaching/
+        #   weight: 4 
         - name: CV
           url: cv.html
           weight: 1
