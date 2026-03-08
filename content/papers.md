@@ -37,20 +37,6 @@ description: "Papers by Ritwiz Sarma."
 </details><br>
 
 
-<details class="details-reset border rounded-2">
-  <summary class="px-3 py-2 border-bottom">
-    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
-    <path fill-rule="evenodd" d="..."></path>
-</svg>
-    <span aria-label="Summary" class="m-1">
-      The Himalayan Tightrope: A High-resolution Study of Economy-Environmental Tradeoff of Infrastructure Development <br><small> With <a href="https://www.linkedin.com/in/riju-garg/" target="_blank">Riju Garg</a>. Last presented: Kautilya Colloquy, 2024, Hyderabad IN.</small>
-    </span>
-    <span class="dropdown-caret"></span>
-  </summary>
-<small> <small> This paper uses modern high-resolution data on growth and environmental degradation to analyze the trade-offs between economic development and ecological conservation amidst infrastructure development in the northern Himalayan region. We use novel satellite-based data sources to capture highly localized effects of development and attempt to investigate the micro-level tradeoffs currently being made in building infrastructure in sensitive biomes. </small> </small>
-</details><br>
-
-
 <!-- <details class="details-reset border rounded-2">
   <summary class="px-3 py-2 border-bottom">
     <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
@@ -81,19 +67,6 @@ description: "Papers by Ritwiz Sarma."
 </details><br> -->
 
 
-<details class="details-reset border rounded-2">
-  <summary class="px-3 py-2 border-bottom">
-    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
-    <path fill-rule="evenodd" d="..."></path>
-</svg>
-    <span aria-label="Summary" class="m-1">
-      Development at Crossroads - Lessons from Road Development in Afghanistan <br><small> With <a href="https://ankytbhatya.github.io/">Ankit Bhatia</a>.
-    </span>
-    <span class="dropdown-caret"></span>
-  </summary>
-<small> Transport infrastructure assumed a strategic priority only next to defense and military expenditure in the Afghan reconstruction project post the collapse of the Taliban regime in 2001. This paper explores the political economy challenges of aid-funded development in fragile settings. We identify poor contracting mechanisms, the nexus among insurgents and middlemen, and weak state capacity as three primary political economy factors causing the collapse of strategic road infrastructure in Afghanistan.</small> </small>
-</details><br>
-
 ---
 
 #### Policy Work
@@ -110,6 +83,39 @@ description: "Papers by Ritwiz Sarma."
   </summary>
 <small> This study attempts to analyse the cultural impact of language loss in Tai Khamti speakers, an endangered language community native to North-Eastern India. Primary data is collected to assess cultural markers relating to linguistic maintenance, indigenous knowledge and documentation, linguistic cultural markers, and narrative forms. The analysis of this data provides insight into culture loss through linguistic endangerment in North-Eastern India and the broader intersection of language and culture. </small> </small>
 </details>
+
+---
+
+#### Work in Progress
+
+
+<details class="details-reset border rounded-2">
+  <summary class="px-3 py-2 border-bottom">
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
+    <path fill-rule="evenodd" d="..."></path>
+</svg>
+    <span aria-label="Summary" class="m-1">
+      The Himalayan Tightrope: A High-resolution Study of Economy-Environmental Tradeoff of Infrastructure Development <br><small> With <a href="https://www.linkedin.com/in/riju-garg/" target="_blank">Riju Garg</a>. Last presented: Kautilya Colloquy, 2024, Hyderabad IN.</small>
+    </span>
+    <span class="dropdown-caret"></span>
+  </summary>
+<small> <small> This paper uses modern high-resolution data on growth and environmental degradation to analyze the trade-offs between economic development and ecological conservation amidst infrastructure development in the northern Himalayan region. We use novel satellite-based data sources to capture highly localized effects of development and attempt to investigate the micro-level tradeoffs currently being made in building infrastructure in sensitive biomes. </small> </small>
+</details><br>
+
+
+<details class="details-reset border rounded-2">
+  <summary class="px-3 py-2 border-bottom">
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
+    <path fill-rule="evenodd" d="..."></path>
+</svg>
+    <span aria-label="Summary" class="m-1">
+      Development at Crossroads - Lessons from Road Development in Afghanistan <br><small> With <a href="https://ankytbhatya.github.io/">Ankit Bhatia</a>.
+    </span>
+    <span class="dropdown-caret"></span>
+  </summary>
+<small> Transport infrastructure assumed a strategic priority only next to defense and military expenditure in the Afghan reconstruction project post the collapse of the Taliban regime in 2001. This paper explores the political economy challenges of aid-funded development in fragile settings. We identify poor contracting mechanisms, the nexus among insurgents and middlemen, and weak state capacity as three primary political economy factors causing the collapse of strategic road infrastructure in Afghanistan.</small> </small>
+</details><br>
+
 
 ---
 
