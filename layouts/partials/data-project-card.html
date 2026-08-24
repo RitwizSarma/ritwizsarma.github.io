@@ -1,0 +1,118 @@
+{{- $project := .project -}}
+{{- $featured := .featured -}}
+<article class="portfolio-card{{ if $featured }} portfolio-card--featured{{ end }}">
+  <div class="portfolio-card-copy">
+    {{- if or $project.eyebrow $project.status }}
+    <header class="portfolio-card-header">
+      {{- with $project.eyebrow }}
+      <p class="portfolio-card-eyebrow">{{ $project.eyebrow }}</p>
+      {{- end }}
+      {{- with $project.status }}
+      <span class="portfolio-status portfolio-status--{{ . | urlize }}">{{ . }}</span>
+      {{- end }}
+    </header>
+    {{- end }}
+
+    {{- if $featured }}
+    <h2>{{ $project.title }}</h2>
+    {{- else }}
+    <h3>{{ $project.title }}</h3>
+    {{- end }}
+
+    {{- with $project.metric }}
+    <div class="portfolio-metric">
+      <strong>{{ . }}</strong>
+      <span>{{ $project.metric_label }}</span>
+    </div>
+    {{- end }}
+
+    <p class="portfolio-card-summary">{{ $project.summary }}</p>
+    {{- with $project.detail }}
+    <p class="portfolio-card-detail">{{ . }}</p>
+    {{- end }}
+
+    {{- with $project.contributors }}
+    <p class="portfolio-contributors">
+      <span>{{ $project.contributors_label | default "With" }}</span>
+      {{- range $index, $contributor := . -}}
+        {{- if $index }}, {{ end -}}
+        <a href="{{ $contributor.url | safeURL }}">{{ $contributor.name }}</a>
+      {{- end }}
+    </p>
+    {{- end }}
+
+    {{- with $project.snippet }}
+    <div class="portfolio-snippet" aria-label="Installation command">
+      <span aria-hidden="true">$</span><code>{{ . }}</code>
+      <button class="portfolio-copy-button" type="button" aria-label="Copy installation command">
+        <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
+          <rect x="5.25" y="5.25" width="7.5" height="7.5" rx="1" />
+          <path d="M10.5 5.25V3.75a1 1 0 0 0-1-1H4.25a1 1 0 0 0-1 1v5.25a1 1 0 0 0 1 1h1" />
+        </svg>
+        <span class="portfolio-copy-label">Copy</span>
+      </button>
+    </div>
+    {{- end }}
+
+    {{- with $project.tags }}
+    <ul class="portfolio-tags" aria-label="Methods and technologies">
+      {{- range . }}
+      <li>{{ . }}</li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    {{- if $project.links }}
+    <div class="portfolio-links">
+      {{- range $project.links }}
+      <a class="portfolio-link{{ if .primary }} portfolio-link--primary{{ end }}" href="{{ .url | safeURL }}">
+        <span>{{ .label }}</span>
+        <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
+          <path d="M3.5 12.5 12 4M6 3.5h6.5V10" />
+        </svg>
+      </a>
+      {{- end }}
+    </div>
+    {{- else }}
+      {{- if $featured }}
+    <p class="portfolio-disabled-link">
+      <span aria-hidden="true"></span>
+      Dashboard in development
+    </p>
+      {{- end }}
+    {{- end }}
+  </div>
+
+  {{- if and $featured (eq $project.visual "solar-dashboard") }}
+  <div class="portfolio-dashboard-visual" aria-hidden="true">
+      <div class="dashboard-preview-control">
+        <p>Installation stock at quarter end</p>
+        <div class="dashboard-preview-period">
+          <strong>2026Q2</strong>
+          <span>18,192 footprints</span>
+        </div>
+        <div class="dashboard-preview-slider"><span></span></div>
+        <div class="dashboard-preview-filters">
+          <span>All nine states</span>
+          <span>Cumulative footprint</span>
+        </div>
+        <div class="dashboard-preview-metrics">
+          <div><strong>18,192</strong><span>Farms mapped</span></div>
+          <div><strong>2,163.2</strong><span>Mapped km²</span></div>
+          <div><strong>0</strong><span>New farms</span></div>
+          <div><strong>0.0</strong><span>New km²</span></div>
+        </div>
+      </div>
+      <div class="dashboard-preview-chart">
+        <strong>Cumulative mapped footprint</strong>
+        <span>Move the quarter slider to trace the series</span>
+        <svg viewBox="0 0 300 82" preserveAspectRatio="none">
+          <line x1="2" x2="298" y1="73" y2="73" />
+          <polyline points="2,72 28,69 48,65 70,58 94,51 116,45 138,37 160,31 180,21 202,16 224,11 246,8 270,6 298,5" />
+          <circle cx="298" cy="5" r="3" />
+        </svg>
+        <div class="dashboard-chart-axis"><span>2015Q1</span><span>2026Q2</span></div>
+      </div>
+  </div>
+  {{- end }}
+</article>

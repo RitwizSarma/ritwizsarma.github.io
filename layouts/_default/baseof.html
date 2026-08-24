@@ -13,6 +13,9 @@
 {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
 {{- print "list" -}}
 {{- end -}}
+{{- if eq .Layout `data-portfolio` -}}
+{{- print " data-portfolio-page" -}}
+{{- end -}}
 {{- if eq site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}

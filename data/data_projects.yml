@@ -1,0 +1,194 @@
+- title: "Mapping India’s solar footprint"
+  section: featured
+  weight: 1
+  summary: "An interactive atlas tracing the expansion of solar farms across nine Indian states, identified using machine learning and satellite imagery."
+  detail: "Explore 18,192 mapped footprints quarter by quarter from 2015 to 2026, filter by state, and compare cumulative capacity with newly detected farms."
+  tags:
+    - Machine learning
+    - Satellite imagery
+    - Geospatial data
+  visual: solar-dashboard
+  links:
+    - label: Explore the dashboard
+      url: /india_solar_history_leaflet.html
+      primary: true
+
+- title: "fastLP"
+  section: tools
+  weight: 1
+  eyebrow: "Python + Rust"
+  metric: "17x"
+  metric_label: "faster than reghdfe"
+  summary: "Fast panel local projections for applied macroeconomists, with a beginner-friendly Python API and a high-performance Rust core."
+  detail: "Caches and reuses the same calculations across horizons whenever possible instead of rebuilding the same matrix for each horizon."
+  snippet: "pip install fastlp-py"
+  tags:
+    - Econometrics
+    - Empirical macro
+    - Jorda (2005)
+  links:
+    - label: Documentation
+      url: /fastLP/
+    - label: View on GitHub
+      url: https://github.com/RitwizSarma/fastLP
+      primary: true
+
+- title: "longview"
+  section: tools
+  weight: 2
+  eyebrow: "Stata"
+  summary: "A Stata command for plotting cumulative treatment effects from difference-in-difference event-study designs."
+  detail: "Aggregate multiple estimates across time; useful when the research question focuses on long-run consequences of a policy or intervention."
+  snippet: "net install longview, from(\"https://raw.githubusercontent.com/ritwizsarma/longview-stata/main/\")"
+  tags:
+    - Diff-in-diff
+    - Data viz
+  links:
+    - label: View on GitHub
+      url: https://github.com/RitwizSarma/longview-stata
+      primary: true
+
+- title: "Plot-level land values"
+  section: public-goods
+  weight: 2
+  eyebrow: "Python: Playwright"
+  metric: "200M+"
+  metric_label: "plots across 11 states"
+  summary: "Repository of code for scraping very high resolution datasets of land values from public registration systems."
+  tags:
+    - Land markets
+    - Public data
+    # - Geospatial data
+  links:
+    - label: View on GitHub
+      url: https://github.com/RitwizSarma/igrodisha-scraper/
+      primary: true
+
+- title: "CAG audit report scraper"
+  section: public-goods
+  weight: 1
+  eyebrow: "Python: requests"
+  summary: "A scraper that makes the Comptroller and Auditor General of India’s extensive archive of audit reports easier to collect and study as text data."
+  tags:
+    # - Python
+    - Public records
+    - Text data
+  links:
+    - label: View on GitHub
+      url: https://github.com/RitwizSarma/cag-scraper/
+      primary: true
+
+- title: "MSE thesis templates"
+  section: public-goods
+  weight: 3
+  eyebrow: "LaTeX"
+  summary: "Open LaTeX templates for Master’s theses at the Madras School of Economics, also available as an official Overleaf template."
+  tags:
+    - LaTeX
+    - Academic writing
+    # - Reproducibility
+  links:
+    - label: GitHub
+      url: https://github.com/RitwizSarma/mse-thesis-templates/
+      primary: true
+    - label: Overleaf
+      url: https://www.overleaf.com/latex/templates/madras-school-of-economics-official-thesis-templates/rbxdzxfjnmcr
+
+- title: "Judicial text classification"
+  section: case-studies
+  weight: 2
+  eyebrow: "Text data"
+  status: "Concluded"
+  summary: "Deep learning and preprocessing pipelines for a unique judicial text-classification problem at XKDR Forum."
+  detail: "My work included training and fine-tuning on several architectures, including LSTMs and CNNs, and comparing the efficiency of RNN-based pipeline to an LLM-based approach."
+  contributors_label: "Intern for"
+  contributors:
+    - name: "Ajay Shah"
+      url: https://mayin.org/ajayshah/
+    - name: "Siddarth Raman."
+      url: https://www.linkedin.com/in/siddarthraman/
+  tags:
+    - Deep learning
+    - NLP
+    - TensorFlow
+    - spaCy
+  links:
+    - label: About XKDR
+      url: https://www.xkdr.org/
+      primary: true
+    - label: XKDR's GitHub
+      url: https://github.com/xkdr/
+
+# - title: "Tracking the tradeoff"
+#   section: case-studies
+#   weight: 3
+#   eyebrow: "Remote-sensing panel"
+#   metric: "20 years"
+#   metric_label: "of high-resolution data"
+#   summary: "A village and census-town panel of economic and environmental indicators for Uttarakhand and Himachal Pradesh, constructed from NASA and ESA satellite data."
+#   tags:
+#     - Remote sensing
+#     - R
+#     - QGIS
+#   links:
+#     - label: Read the working draft
+#       url: /papers/Tradeoff_TIES25.pdf
+#       primary: true
+
+- title: "Gazette of India corpus"
+  section: case-studies
+  weight: 2
+  status: "In progress"
+  eyebrow: "Text data"
+  metric: "10,000,000+"
+  metric_label: "Extraordinary Gazette issues"
+  summary: "A massive corpus assembled from multiple Gazette of India archives, with ongoing NLP work to turn these public notices into structured, usable data."
+  detail: "Please reach out to me if you'd be interested in contributing!"
+  contributors_label: "With"
+  contributors:
+    - name: "Ankit Bhatia."
+      url: "https://ankytbhatya.github.io/"
+  tags:
+    - Web scraping
+    - NLP
+    - Playwright
+    - Selenium
+
+- title: "Monetary policy sentiment from text"
+  section: case-studies
+  weight: 1
+  status: "In progress"
+  eyebrow: "Text data"
+  metric: "600K+"
+  metric_label: "sentences classified using NLP"
+  summary: "I fine-tuned a BERT-based model to classify hawkish/dovish sentiment at the sentence level, then apply it to the full archive of Federal Reserve transcripts dating back to 1990."
+  contributors_label: "With"
+  contributors:
+    - name: "Bhanu Pratap"
+      url: "https://sites.google.com/view/bhanupratap/home"
+    - name: "Shelja Bhatia"
+      url: "https://sites.google.com/view/sheljabhatia/home"
+    - name: "William English."
+      url: "https://som.yale.edu/faculty-research/faculty-directory/william-b-english"
+  tags:
+    - PyTorch
+    - NLP
+    - spaCy
+    - Sequence classification
+
+- title: "Geospatial dataset of bridges"
+  section: case-studies
+  weight: 4
+  status: "In progress"
+  eyebrow: "Geospatial data"
+  metric: "2,200+"
+  metric_label: "Indian bridges"
+  summary: "A novel dataset of Indian bridges with geospatial and temporal markers, built for a difference-in-differences study of infrastructure and economic activity."
+  contributors_label: "With"
+  contributors:
+    - name: "Ankit Bhatia."
+      url: "https://ankytbhatya.github.io/"
+  tags:
+    - QGIS
+    - Google Earth
+    - OpenStreetMaps

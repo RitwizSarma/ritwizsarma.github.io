@@ -1,0 +1,51 @@
+{{- define "main" }}
+
+{{- $projects := site.Data.data_projects -}}
+
+<article class="data-portfolio">
+  <header class="portfolio-intro">
+    <h1>{{ .Title }}</h1>
+    {{- with .Content }}
+    <div class="portfolio-intro-copy">{{ . }}</div>
+    {{- end }}
+    <div class="portfolio-intro-rule" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  {{- range sort (where $projects "section" "featured") "weight" }}
+  <section class="portfolio-feature" aria-label="Featured project">
+    {{ partial "data-project-card.html" (dict "project" . "featured" true) }}
+  </section>
+  {{- end }}
+
+  {{- $sections := slice
+    (dict "id" "tools" "title" "Statistical packages" "description" "Open-source software contributions for people who use econometric methods.")
+    (dict "id" "public-goods" "title" "Public goods & resources" "description" "")
+    (dict "id" "case-studies" "title" "Data science projects" "description" "Opportunities where I built my technical skills.")
+  -}}
+
+  {{- range $sections }}
+    {{- $items := sort (where $projects "section" .id) "weight" -}}
+    {{- if $items }}
+  <section class="portfolio-section" id="{{ .id }}">
+    <header class="portfolio-section-header">
+      <div>
+        <h2>{{ .title }}</h2>
+      </div>
+      <p>{{ .description }}</p>
+    </header>
+    <div class="portfolio-grid portfolio-grid--{{ .id }}">
+      {{- range $items }}
+        {{ partial "data-project-card.html" (dict "project" . "featured" false) }}
+      {{- end }}
+    </div>
+  </section>
+    {{- end }}
+  {{- end }}
+</article>
+
+{{- $portfolioJS := resources.Get "js/data-portfolio.js" | minify | fingerprint }}
+<script defer src="{{ $portfolioJS.RelPermalink }}" integrity="{{ $portfolioJS.Data.Integrity }}"></script>
+
+{{- end }}
