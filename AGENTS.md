@@ -23,6 +23,8 @@ When changing theme behavior, prefer overriding files in `layouts/` or `assets/`
 
 - To edit certain frontpage and title bar content, use `config.yml` and `content/_index.md`.
 - The main pages are `data.md`, `papers.md`, and `teaching.md`.
+- The data portfolio intro and title live in `content/data.md`; project cards are defined in `data/data_projects.yml` and render through `layouts/_default/data-portfolio.html` and `layouts/partials/data-project-card.html`.
+- Data portfolio styling and copy-button behavior live in `assets/css/extended/data-portfolio.css` and `assets/js/data-portfolio.js`. The solar dashboard and its published assets live under `static/india_solar_history_leaflet*`.
 - We're going to build up the content in `courses/` slowly. For now, we're not committing it - it stays local.
 
 ## Commit & Pull Request Guidelines

@@ -1,12 +1,13 @@
-- title: "Mapping India’s solar footprint"
+- title: "Mapping India's solar expansion"
   section: featured
+  status: "Paper coming soon"
   weight: 1
-  summary: "An interactive atlas tracing the expansion of solar farms across nine Indian states, identified using machine learning and satellite imagery."
-  detail: "Explore 18,192 mapped footprints quarter by quarter from 2015 to 2026, filter by state, and compare cumulative capacity with newly detected farms."
-  tags:
-    - Machine learning
-    - Satellite imagery
-    - Geospatial data
+  summary: "Trace the expansion of solar farms in nine Indian states over the last decade, identified using satellite imagery and deep learning."
+  detail: "The Indian energy transition is critical for both conservation and economic independence. Several Indian states rapidly expanded solar farms in the early 2020s, a transition that traditional administrative data cannot capture. This dashboard maps solar farms across India and tracks when they were built."
+  # tags:
+  #   - Machine learning
+  #   - Satellite imagery
+  #   - Geospatial data
   visual: solar-dashboard
   links:
     - label: Explore the dashboard
