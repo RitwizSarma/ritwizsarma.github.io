@@ -26,7 +26,7 @@ menu:
           weight: 1
 
 params:
-    description: "This is Ritwiz Sarma's website."
+    description: "Ritwiz Sarma is an economics researcher and data scientist at CAFRAL, working on climate change, industrial policy, infrastructure, remote sensing, natural language processing, and causal machine learning."
     author: Ritwiz Sarma
     googleAnalyticsID: "G-7J9422H7D9"
     DateFormat: "January 2006"
@@ -52,8 +52,9 @@ params:
     profileMode:
           enabled: true
           title: Ritwiz Sarma
-          subtitle: "Namaste! I'm a Research Associate at [**CAFRAL**](https://cafral.org.in/), a thinktank at the Reserve Bank of India. My interests span climate change, industrial policy, and infrastructure - with a broader goal of making policy more efficient and evidence-based. My work involves methods like remote sensing, NLP, and causal machine learning, powered by Python, R, QGIS, and STATA. I’ve previously built deep learning pipelines for legal text at XKDR Forum with Ajay Shah, and contributed to climate change research at the Energy Policy Institute at Chicago - India."
+          subtitle: "Namaste! I'm a Research Associate at [**CAFRAL**](https://cafral.org.in/), a thinktank at the Reserve Bank of India. I'm interested in climate change, industrial policy, and infrastructure. My work involves methods like remote sensing and natural language processing (NLP). Previously: I spent a summer building deep learning pipelines for legal text at XKDR Forum with Ajay Shah, and contributed to climate change research at the Energy Policy Institute at Chicago - India."
           imageUrl: "bio-pic.png"
+          imageTitle: "Portrait of Ritwiz Sarma"
           imageWidth: 160
           imageHeight: 160
           buttons:
@@ -75,6 +76,29 @@ params:
             #   url: archive/
             # - name: Blog
             #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+
+    schemaPerson:
+        jobTitle: "Research Associate"
+        image: "bio-pic.png"
+        worksFor:
+            name: "Centre for Advanced Financial Research and Learning (CAFRAL)"
+            url: "https://www.cafral.org.in/"
+        alumniOf:
+            name: "Madras School of Economics"
+            url: "https://mse.ac.in/"
+        knowsAbout:
+            - Climate change
+            - Industrial policy
+            - Infrastructure
+            - Development economics
+            - Remote sensing
+            - Natural language processing
+            - Causal machine learning
+        sameAs:
+            - "https://github.com/RitwizSarma/"
+            - "https://www.linkedin.com/in/rsarma-datasci/"
+            - "https://orcid.org/0009-0002-6973-3213"
+            - "https://scholar.google.com/citations?user=cL23w-4AAAAJ"
 
     socialIcons:
         - name: CV

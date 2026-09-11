@@ -1,7 +1,7 @@
 ---
 title: "Teaching"
 hidemeta: true
-description: "Teaching activities by Ritwiz Sarma."
+description: "Teaching materials and workshops by Ritwiz Sarma on climate policy, geospatial data, and applied economic research."
 ---
 
 ---

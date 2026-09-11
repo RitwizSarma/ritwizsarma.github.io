@@ -1,0 +1,34 @@
+{{- $person := site.Params.schemaPerson -}}
+{{- $sameAs := slice -}}
+{{- range $person.sameAs -}}
+  {{- $sameAs = $sameAs | append . -}}
+{{- end -}}
+{{- $knowsAbout := slice -}}
+{{- range $person.knowsAbout -}}
+  {{- $knowsAbout = $knowsAbout | append . -}}
+{{- end -}}
+{{- $mainEntity := dict
+  "@type" "Person"
+  "@id" (printf "%s#person" site.Home.Permalink)
+  "name" site.Params.author
+  "url" site.Home.Permalink
+  "image" ($person.image | absURL)
+  "description" site.Params.description
+  "jobTitle" $person.jobTitle
+  "worksFor" (dict "@type" "Organization" "name" $person.worksFor.name "url" $person.worksFor.url)
+  "alumniOf" (dict "@type" "EducationalOrganization" "name" $person.alumniOf.name "url" $person.alumniOf.url)
+  "knowsAbout" $knowsAbout
+  "sameAs" $sameAs
+-}}
+{{- $profilePage := dict
+  "@context" "https://schema.org"
+  "@type" "ProfilePage"
+  "@id" (printf "%s#profilepage" site.Home.Permalink)
+  "url" site.Home.Permalink
+  "name" (printf "%s | Economics Researcher and Data Scientist" site.Title)
+  "description" site.Params.description
+  "mainEntity" $mainEntity
+-}}
+<script type="application/ld+json">
+{{ $profilePage | jsonify | safeJS }}
+</script>

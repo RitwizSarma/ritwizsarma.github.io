@@ -1,7 +1,7 @@
 ---
 title: "Research"
 hidemeta: true
-description: "Papers by Ritwiz Sarma."
+description: "Working papers and policy research by Ritwiz Sarma on climate finance, industrial policy, infrastructure, and development economics in India."
 ---
 
 <small>Please click on the arrow bullet to read a quick summary.<br>I also do qualitative work on language endangerment - more [here](/language-work).</small>

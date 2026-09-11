@@ -144,6 +144,9 @@
 {{- partial "templates/opengraph.html" . }}
 {{- partial "templates/twitter_cards.html" . }}
 {{- partial "templates/schema_json.html" . }}
+{{- if .IsHome }}
+{{- partial "person-jsonld.html" . }}
+{{- end }}
 
 {{ if and (hugo.IsProduction) (.Site.Params.googleAnalyticsID) }}
 {{- partial "analytics.html" . }}
@@ -152,4 +155,3 @@
 {{ if or .Page.Params.math .Site.Params.math }}
 {{- partial "math.html" .}}
 {{ end }} 
-

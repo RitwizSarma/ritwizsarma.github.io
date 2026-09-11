@@ -1,11 +1,11 @@
 ---
 title: "Languages and Culture Change"
 hidemeta: true
-description: "Language and culture change work by Ritwiz Sarma."
+description: "Research by Ritwiz Sarma on language endangerment, cultural change, and community-led language revitalization in Northeast India."
 ---
 
 <figure>
-    <img src="/talkpic.png" style="width:90%"  alt="Speaking at Kautilya."/>
+    <img src="/talkpic.png" style="width:90%" alt="Ritwiz Sarma speaking about language endangerment at the Kautilya Colloquy."/>
     <figcaption class="figure-caption text-center"> <small> Speaking on language policy at the Kautilya School of Public Policy, Hyderabad IN. </small> </figcaption>
 </figure>
 
