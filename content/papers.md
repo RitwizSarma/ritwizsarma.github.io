@@ -16,7 +16,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. <i>Under review</i> at the Journal of Banking & Finance. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
+      Who Lends When it Floods? Banks versus Non-Banks <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. <i>Under review</i> at the Journal of Banking & Finance. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
     </span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -29,7 +29,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Does One District One Product Deliver? Evidence from a Subnational Industrial Policy <br><small> With <a href="https://mse.ac.in/faculty/gopal-krishna-roy/" target="_blank">Gopal Krishna Roy</a>. <i>R&R</i> at the BE Journal of Economic Analysis and Policy.</small>
+      Industrial Policy for Unincorporated Firms: Evidence from India's One District One Product Programme <br><small> With <a href="https://mse.ac.in/faculty/gopal-krishna-roy/" target="_blank">Gopal Krishna Roy</a>. <i>R&R</i> at the BE Journal of Economic Analysis and Policy.</small>
     </span>
     <span class="dropdown-caret"></span>
   </summary>
