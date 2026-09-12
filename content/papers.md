@@ -16,7 +16,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. Last presented: ESCB RCCC Workshop, Banco de Espana, 2025, Madrid ES. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
+      Who Lends When it Floods? NBFCs, Banks, and Household Liquidity in India <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. <i>Under review</i> at the Journal of Banking & Finance. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
     </span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -29,7 +29,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Does One District One Product Deliver? Evidence from a Subnational Industrial Policy <br><small> With <a href="https://mse.ac.in/faculty/gopal-krishna-roy/" target="_blank">Gopal Krishna Roy</a>. R&R at the BE Journal of Economic Analysis and Policy.</small>
+      Does One District One Product Deliver? Evidence from a Subnational Industrial Policy <br><small> With <a href="https://mse.ac.in/faculty/gopal-krishna-roy/" target="_blank">Gopal Krishna Roy</a>. <i>R&R</i> at the BE Journal of Economic Analysis and Policy.</small>
     </span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -80,7 +80,10 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <span class="dropdown-caret"></span>
   </summary>
 <small> This study attempts to analyse the cultural impact of language loss in Tai Khamti speakers, an endangered language community native to North-Eastern India. Primary data is collected to assess cultural markers relating to linguistic maintenance, indigenous knowledge and documentation, linguistic cultural markers, and narrative forms. The analysis of this data provides insight into culture loss through linguistic endangerment in North-Eastern India and the broader intersection of language and culture. </small> </small>
-</details>
+</details><br>
+
+Optimal Lending Allocations for the Priority Sector <br><small>For FIDD, Reserve Bank of India. With Sankalp Mathur, Vidhya Soundararajan, and Kritika Chakrabarti.</small>
+
 
 ---
 
@@ -88,9 +91,9 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
 
 Bank Lending and Long-run Flood Adaptation <br><small>With Sankalp Mathur.</small>
 
-Renewable Energy Infrastructure and Development <br><small>With Ankit Bhatia.</small>
+Land Reform and Solar Expansion: Evidence using Machine Learning and Satellite Imagery <br><small>With Ankit Bhatia.</small>
 
-Infrastructure and Environmental Stress in the Himalayan States <br><small>With [Riju Garg](https://www.linkedin.com/in/riju-garg/).</small>
+<!-- Infrastructure and Environmental Stress in the Himalayan States <br><small>With [Riju Garg](https://www.linkedin.com/in/riju-garg/).</small> -->
 
 <!-- <details class="details-reset border rounded-2">
   <summary class="px-3 py-2 border-bottom">
