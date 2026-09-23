@@ -100,6 +100,14 @@ params:
             - "https://orcid.org/0009-0002-6973-3213"
             - "https://scholar.google.com/citations?user=cL23w-4AAAAJ"
 
+    schema:
+        publisherType: Person
+        sameAs:
+            - "https://github.com/RitwizSarma/"
+            - "https://www.linkedin.com/in/rsarma-datasci/"
+            - "https://orcid.org/0009-0002-6973-3213"
+            - "https://scholar.google.com/citations?user=cL23w-4AAAAJ"
+
     socialIcons:
         - name: CV
           url: cv.pdf

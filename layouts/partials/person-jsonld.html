@@ -29,6 +29,17 @@
   "description" site.Params.description
   "mainEntity" $mainEntity
 -}}
+{{- $website := dict
+  "@context" "https://schema.org"
+  "@type" "WebSite"
+  "@id" (printf "%s#website" site.Home.Permalink)
+  "url" site.Home.Permalink
+  "name" site.Title
+  "alternateName" "Ritwiz Sarma's website"
+-}}
 <script type="application/ld+json">
 {{ $profilePage | jsonify | safeJS }}
+</script>
+<script type="application/ld+json">
+{{ $website | jsonify | safeJS }}
 </script>
