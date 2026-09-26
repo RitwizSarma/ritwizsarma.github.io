@@ -4,7 +4,7 @@ hidemeta: true
 description: "Working papers and policy research by Ritwiz Sarma on climate finance, industrial policy, infrastructure, and development economics in India."
 ---
 
-<small>Please click on the arrow bullet to read a quick summary.<br>I also do qualitative work on language endangerment - more [here](/language-work).</small>
+<small>Please click on the arrow bullet to read a quick summary.<br>I also do mixed-methods work on language endangerment - more [here](/language-work).</small>
 
 ---
 
@@ -75,7 +75,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Language Endangerment and Culture Loss - A Case Study <br><small> Social Policy Research Foundation, 2022. [<a href="https://sprf.in/language-endangerment-and-culture-loss-tai-khamti/">Stub at SPRF website.</a>] [<a href="https://sprf.in/wp-content/uploads/2022/10/Case-Study-of-Tai-Khamti-2.pdf">PDF.</a>] [<a href="../talks/Presentation_Kautilya.pdf">Slides.</a>] [<a href="/refs/SPRF_paper.bib">Bib.</a>] 
+      Language Endangerment and Culture Loss - A Case Study <br><small> Social Policy Research Foundation, 2022. [<a href="https://sprf.in/language-endangerment-and-culture-loss-tai-khamti/">Stub at SPRF website.</a>] [<a href="https://sprf.in/wp-content/uploads/2022/10/Case-Study-of-Tai-Khamti-2.pdf">PDF.</a>] [<a href="../talks/language-rejuvenation.html">Slides.</a>] [<a href="/refs/SPRF_paper.bib">Bib.</a>] 
     </span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -146,7 +146,7 @@ Land Reform and Solar Expansion: Evidence using Machine Learning and Satellite I
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Understanding Language Endangerment and its Policy Implications. <br> <small> <i>Online by the ST & SC Development, Minorities & Backward Classes Welfare Department, Government of Odisha. December 2023.</i> [<a href="https://www.linkedin.com/posts/purbapath-id_join-us-tomorrow-for-our-conversation-with-activity-7145734183364026368-fekS">Event link.</a>] [<a href="../talks/GovtOdisha_Presentation.pdf">Slides.</a>]
+      Understanding Language Endangerment and its Policy Implications. <br> <small> <i>Online by the ST & SC Development, Minorities & Backward Classes Welfare Department, Government of Odisha. December 2023.</i> [<a href="https://www.linkedin.com/posts/purbapath-id_join-us-tomorrow-for-our-conversation-with-activity-7145734183364026368-fekS">Event link.</a>] [<a href="../talks/panel-discussion.html">Slides.</a>]
     </span>
     <span class="dropdown-caret"></span>
   </summary>
