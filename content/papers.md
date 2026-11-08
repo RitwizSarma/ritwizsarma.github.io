@@ -16,7 +16,7 @@ description: "Working papers and policy research by Ritwiz Sarma on climate fina
     <path fill-rule="evenodd" d="..."></path>
 </svg>
     <span aria-label="Summary" class="m-1">
-      Who Lends When it Floods? Banks versus Non-Banks <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. <i>Under review</i> at the Journal of Banking & Finance. [<a href="https://www.sankalpmathur.com/research#:~:text=4.%20Who%20Lends%20When%20It%20Floods%3F%20NBFCs%2C%20Banks%2C%20and%20Household%20Liquidity%20in%20India%C2%A0" target="_blank">PDF</a>]
+      Who Lends When it Floods? Banks versus Non-Banks <br><small> With <a href="https://www.sankalpmathur.com/" target="_blank">Sankalp Mathur</a>. <i>Under review</i> at the Journal of Banking & Finance. [<a href="https://www.cafral.org.in/research-papers/who-lends-when-it-floods-banks-vs-non-banks" target="_blank">CAFRAL Working Paper.</a>]
     </span>
     <span class="dropdown-caret"></span>
   </summary>
